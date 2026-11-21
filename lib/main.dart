@@ -14,20 +14,38 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int likes = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Lab L1 · 67115998')),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.person, size: 100),
-            SizedBox(height: 16),
-            Text('Juthaphon Sungruang', style: TextStyle(fontSize: 24)),
+            const Icon(Icons.person, size: 100),
+            const SizedBox(height: 16),
+            const Text('Juthaphon Sungruang', style: TextStyle(fontSize: 24)),
+            const SizedBox(height: 16),
+            Text('Likes: $likes', style: const TextStyle(fontSize: 20)),
+            ElevatedButton.icon(
+              onPressed: () {
+                setState(() {
+                  likes++;
+                });
+              },
+              icon: const Icon(Icons.thumb_up),
+              label: const Text('Like'),
+            ),
           ],
         ),
       ),
