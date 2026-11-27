@@ -37,15 +37,20 @@ class Student {
 
   // TODO(Step 2): return the nickname, or the name when nickname is null.
   // One expression with ?? (no if needed).
-  String get displayName => name; // placeholder
+  String get displayName => nickname ?? name; // placeholder
 
   // TODO(Step 2): return gradeFor(score).
-  String get grade => '?'; // placeholder
+  String get grade => gradeFor(score); // placeholder
 }
 
 // TODO(Step 2): return the mean score of [students]; 0 for an empty list.
 // Use a for-in loop to add up s.score, then divide by students.length.
 // Then delete the `skip:` of the Student group in test/grade_test.dart.
 double average(List<Student> students) {
-  return 0; // placeholder
+  if (students.isEmpty) return 0;
+  var total = 0.0;
+  for (final s in students) {
+    total += s.score;
+  }
+  return total / students.length;
 }

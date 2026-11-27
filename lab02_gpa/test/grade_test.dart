@@ -59,5 +59,5 @@ void main() {
       expect(average([a, b]), 75);
       expect(average([]), 0);
     });
-  }, skip: 'TODO(Step 2): remove this skip when Student and average() are written');
+  });
 }
