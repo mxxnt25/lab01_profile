@@ -58,7 +58,20 @@ class GradePage extends StatelessWidget {
             Text('Average: ${avg.toStringAsFixed(1)}'
                 ' · ${gradeFor(avg)}'),
             const SizedBox(height: 16),
-            for (final s in items) ResultCard(student: s),
+            Expanded(
+              child: LayoutBuilder(builder: (context, box) {
+                final cards = [
+                  for (final s in items) ResultCard(student: s),
+                ];
+                if (box.maxWidth > breakpoint) {
+                  return Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [for (final c in cards) Expanded(child: c)],
+                  );
+                }
+                return Column(children: cards);
+              }),
+            ),
           ],
         ),
       ),

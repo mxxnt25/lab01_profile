@@ -57,5 +57,5 @@ void main() {
       expect(tester.getRect(card).contains(tester.getBottomRight(name)), isTrue);
       expect(tester.takeException(), isNull);
     });
-  }, skip: 'TODO(Step 5): remove this skip when the layout is finished');
+  });
 }
