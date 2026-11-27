@@ -47,9 +47,21 @@ class GradePage extends StatelessWidget {
     //   box.maxWidth > breakpoint → Row of Expanded(child: card),
     //   otherwise Column of cards. Then delete the `skip:` in
     //   test/grade_page_test.dart.
+    final avg = average(items);
     return Scaffold(
-      appBar: AppBar(title: const Text('Lab L2 · [ID]')),
-      body: const Center(child: Text('TODO: Steps 3–5')),
+      appBar: AppBar(title: const Text('Lab L2 · 67115998')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Average: ${avg.toStringAsFixed(1)}'
+                ' · ${gradeFor(avg)}'),
+            const SizedBox(height: 16),
+            for (final s in items) ResultCard(student: s),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -69,6 +81,25 @@ class ResultCard extends StatelessWidget {
     //     Text(student.displayName), Text('Score: ${student.score.toStringAsFixed(1)}')
     // Try it once WITHOUT Expanded on the long name: you will see the
     // yellow-black overflow stripes. Then put Expanded back.
-    return Card(child: Text(student.name)); // placeholder
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: [
+            CircleAvatar(child: Text(student.grade)),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(student.displayName),
+                  Text('Score: ${student.score.toStringAsFixed(1)}'),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ); // placeholder
   }
 }
