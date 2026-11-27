@@ -38,7 +38,7 @@ void main() {
       expect(() => gradeFor(-1), throwsRangeError);
       expect(() => gradeFor(100.5), throwsRangeError);
     });
-  }, skip: 'TODO(Step 1): remove this skip when gradeFor() is written');
+  });
 
   group('Student and average (Step 2)', () {
     test('displayName is the nickname when there is one', () {
