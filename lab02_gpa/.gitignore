@@ -46,3 +46,8 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Lab handout files (kept locally, not committed)
+/L2_starter.zip
+/T2_Lab_TH.pdf
+/L2_example_S1.png
