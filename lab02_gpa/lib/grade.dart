@@ -22,7 +22,7 @@ String gradeFor(double score) {
   if (score >= 60) return 'C';
   if (score >= 55) return 'D+';
   if (score >= 50) return 'D';
-  return 'F'; // placeholder
+  return 'F';
 }
 
 /// One student's result. The fields and the constructor are given.
@@ -37,10 +37,10 @@ class Student {
 
   // TODO(Step 2): return the nickname, or the name when nickname is null.
   // One expression with ?? (no if needed).
-  String get displayName => nickname ?? name; // placeholder
+  String get displayName => nickname ?? name;
 
   // TODO(Step 2): return gradeFor(score).
-  String get grade => gradeFor(score); // placeholder
+  String get grade => gradeFor(score);
 }
 
 // TODO(Step 2): return the mean score of [students]; 0 for an empty list.

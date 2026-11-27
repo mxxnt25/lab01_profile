@@ -113,6 +113,6 @@ class ResultCard extends StatelessWidget {
           ],
         ),
       ),
-    ); // placeholder
+    );
   }
 }
