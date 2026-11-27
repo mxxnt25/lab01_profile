@@ -23,9 +23,9 @@ class GradeApp extends StatelessWidget {
 
 /// Made-up data (given). The long name checks that text wraps.
 const students = <Student>[
-  Student(name: 'Nok Srisuk', score: 85),
-  Student(name: 'Somchai Jaidee', nickname: 'Chai', score: 79.5),
-  Student(name: 'Supitcha Wongsawat-Rattanaporn Na Ayutthaya', score: 49.5),
+  Student(name: 'Ploy Rakdee', score: 88),
+  Student(name: 'Jiratchaya Boonmee', nickname: 'Jirat', score: 76.5),
+  Student(name: 'Kittiphong Charoenrat-Siriwattana Na Songkhla', score: 42),
 ];
 
 class GradePage extends StatelessWidget {

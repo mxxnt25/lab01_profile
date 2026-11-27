@@ -23,7 +23,7 @@ void main() {
         (tester) async {
       await pumpAt(tester, portrait);
       expect(find.textContaining('Lab L2'), findsOneWidget);
-      expect(find.text('Average: 71.3 · B'), findsOneWidget);
+      expect(find.text('Average: 68.8 · C+'), findsOneWidget);
       expect(find.byType(ResultCard), findsNWidgets(3));
       final a = tester.getTopLeft(find.byType(ResultCard).at(0));
       final b = tester.getTopLeft(find.byType(ResultCard).at(1));
@@ -37,8 +37,8 @@ void main() {
       expect(find.text('A'), findsOneWidget);
       expect(find.text('B+'), findsOneWidget);
       expect(find.text('F'), findsOneWidget);
-      expect(find.text('Chai'), findsOneWidget); // nickname, not the name
-      expect(find.text('Score: 79.5'), findsOneWidget);
+      expect(find.text('Jirat'), findsOneWidget); // nickname, not the name
+      expect(find.text('Score: 76.5'), findsOneWidget);
     });
 
     testWidgets('landscape: cards side by side, no overflow', (tester) async {
@@ -52,7 +52,7 @@ void main() {
 
     testWidgets('a long name wraps inside its card (Expanded)', (tester) async {
       await pumpAt(tester, landscape);
-      final name = find.textContaining('Supitcha');
+      final name = find.textContaining('Kittiphong');
       final card = find.ancestor(of: name, matching: find.byType(Card));
       expect(tester.getRect(card).contains(tester.getBottomRight(name)), isTrue);
       expect(tester.takeException(), isNull);
